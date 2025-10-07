@@ -4,146 +4,141 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Formulir Pendaftaran Pasien</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f7f7f7;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background-color: #8f8f8f;
-      color: white;
-      text-align: center;
-      padding: 15px 0;
-    }
-    main.container {
-      width: 80%;
-      margin: 20px auto;
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.1);
-    }
-    table {
-      border-collapse: collapse;
-      width: 50%;
-      margin-top: 10px;
-    }
-    th, td {
-      border: 1px solid #000;
-      padding: 8px;
-      text-align: center;
-    }
-    th {
-      background-color: #dce6f1;
-    }
-    h2 {
-      color: #000000;
-    }
-    ul {
-      list-style-type: disc;
-      margin-left: 20px;
-    }
-    footer {
-      background-color: #222;
-      color: white;
-      text-align: center;
-      padding: 15px;
-      margin-top: 30px;
-    }
-    footer a {
-      color: #33aaff;
-      text-decoration: none;
-    }
-    footer a:hover {
-      text-decoration: underline;
-    }
-    input[type=text],
-    input[type=password],
-    select,
-    textarea {
-      width: 95%;
-      padding: 5px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      font-size: 1rem;
-    }
-    input[type=submit] {
-      background-color: #00a1d3;
-      color: white;
-      border: none;
-      padding: 8px 16px;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 1rem;
-    }
-    input[type=submit]:hover {
-      background-color: #4bf3ff;
-    }
-    fieldset {
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      padding: 10px 15px;
-      margin-bottom: 15px;
-    }
-    legend {
-      font-weight: bold;
-      padding: 0 5px;
-    }
-    label {
-      display: block;
-      margin-bottom: 6px;
-      font-weight: 600;
-    }
-    .inline-label {
-      display: inline-block;
-      margin-right: 15px;
-      font-weight: normal;
-    }
-  </style>
 </head>
 <body>
-
   <header>
     <h1>Formulir Pendaftaran Pasien</h1>
   </header>
 
-  <main class="container">
+  <section>
     <form method="POST" action="#">
-      <label for="nama">Nama Lengkap <sup>*</sup></label>
-      <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap" required minlength="3" />
+      <table>
+        <tr>
+          <td>Nama Lengkap</td>
+          <td><input type="text" name="nama" required autofocus /></td>
+        </tr>
+        <tr>
+          <td>Password</td>
+          <td><input type="password" name="password" required /></td>
+        </tr>
+        <tr>
+          <td>Email</td>
+          <td><input type="email" name="email" required /></td>
+        </tr>
+        <tr>
+          <td>Website/Blog</td>
+          <td><input type="url" name="website" placeholder="https://contoh.com" /></td>
+        </tr>
+        <tr>
+          <td>Tanggal Janji Temu</td>
+          <td><input type="date" name="tanggal_janji" /></td>
+        </tr>
+        <tr>
+  <td>Jarak Rumah ke Kampus (km)</td>
+  <td>
+    <input type="range" name="jarak" id="jarak" min="0" max="50" step="5" oninput="updateJarakValue(this.value)" />
+    <span id="jarakValue">0 km</span>
+  </td>
+</tr>
 
-      <label for="password">Password <sup>*</sup></label>
-      <input type="password" id="password" name="password" placeholder="Masukkan password" required minlength="6" />
+<script>
+  function updateJarakValue(val) {
+    document.getElementById('jarakValue').textContent = val + ' km';
+  }
 
-      <fieldset>
-        <legend>Jenis Kelamin <sup>*</sup></legend>
-        <label class="inline-label"><input type="radio" name="jk" value="Laki-laki" required> Laki-laki</label>
-        <label class="inline-label"><input type="radio" name="jk" value="Perempuan"> Perempuan</label>
-      </fieldset>
+  // Set nilai awal saat halaman dimuat
+  document.addEventListener('DOMContentLoaded', () => {
+    const jarakInput = document.getElementById('jarak');
+    updateJarakValue(jarakInput.value);
+  });
+</script>
+        <tr>
+          <td>Warna Kesukaan</td>
+          <td><input type="color" name="warna" /></td>
+        </tr>
+        <tr>
+          <td>Jenis Kelamin</td>
+          <td>
+            <input type="radio" name="jk" value="Laki-laki" /> Laki-laki
+            <input type="radio" name="jk" value="Perempuan" /> Perempuan
+          </td>
+        </tr>
+        <tr>
+          <td>Hobi</td>
+          <td>
+            <input type="checkbox" name="hobi" value="Membaca" /> Membaca
+            <input type="checkbox" name="hobi" value="Olahraga" /> Olahraga
+            <input type="checkbox" name="hobi" value="Musik" /> Musik
+            <input type="checkbox" name="hobi" value="Berenang" /> Berenang
+          </td>
+        </tr>
+        <tr>
+          <td>Asal Kota</td>
+          <td>
+            <select name="kota">
+              <option>Jombang</option>
+              <option>Surabaya</option>
+              <option>Malang</option>
+              <option>Jakarta</option>
+              <option>Madiun</option>
+              <option>Kediri</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Komentar</td>
+          <td><textarea name="komentar" rows="3"></textarea></td>
+        </tr>
+        <tr>
+          <td colspan="2" style="text-align:center;">
+            <input type="submit" value="KIRIM DATA" />
+          </td>
+        </tr>
+      </table>
+    </form>
+  </section>
 
-      <fieldset>
-        <legend>Hobi</legend>
-        <label class="inline-label"><input type="checkbox" name="hobi[]" value="Membaca"> Membaca</label>
-        <label class="inline-label"><input type="checkbox" name="hobi[]" value="Olahraga"> Olahraga</label>
-        <label class="inline-label"><input type="checkbox" name="hobi[]" value="Musik"> Musik</label>
-        <label class="inline-label"><input type="checkbox" name="hobi[]" value="Berenang"> Berenang</label>
-      </fieldset>
+   <h2>Jadwal Dokter</h2>
+    <table border="1" cellpadding="5" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Hari</th>
+                <th>Jam Praktik</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Senin</td>
+                <td>08:00 - 12:00</td>
+            </tr>
+            <tr>
+                <td>Rabu</td>
+                <td>13:00 - 17:00</td>
+            </tr>
+            <tr>
+                <td>Jumat</td>
+                <td>09:00 - 11:00</td>
+            </tr>
+        </tbody>
+    </table>
 
-      <label for="kota">Asal Kota</label>
-      <select id="kota" name="kota" required>
-        <option value="" disabled selected>Pilih kota asal</option>
-        <option value="Jombang">Jombang</option>
-        <option value="Surabaya">Surabaya</option>
-        <option value="Malang">Malang</option>
-        <option value="Jakarta">Jakarta</option>
-        <option value="Madiun">Madiun</option>
-        <option value="Kediri">Kediri</option>
-      </select>
+    <article>
+      <h2>Langkah Pendaftaran</h2>
+      <ul>
+        <li>Isi formulir dengan lengkap.</li>
+        <li>Klik tombol "KIRIM DATA".</li>
+        <li>Tunggu konfirmasi melalui email.</li>
+      </ul>
+    </article>
+  </section>
 
-      <label for="komentar">Komentar</label>
-      <textarea id="komentar" name="komentar" rows="3" placeholder="Tulis komentar Anda..."></textarea>
-
-      <br /><br />
-     <input type="submit" value="KIRIM DATA" />
+  <footer>
+    <p>
+      Kontak: (0321) xxxxxxxx | 
+      <a href="https://unipdu.ac.id" target="_blank" rel="noopener noreferrer">
+        Kunjungi Homepage UNIPDU
+      </a>
+    </p>
+  </footer>
+</body>
+</html>
