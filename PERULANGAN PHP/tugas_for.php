@@ -1,4 +1,4 @@
-<?php
+<body>
 <table>
     <thead>
         <tr>
@@ -20,4 +20,4 @@
         ?>
     </tbody>
 </table>
-?>
+</body>
