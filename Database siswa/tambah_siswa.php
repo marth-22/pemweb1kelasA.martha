@@ -1,0 +1,1 @@
+INSERT INTO `data_siswa` (`id_siswa`, `nama_siswa`, `alamat_siswa`, `jk_siswa`, `agama_siswa`, `asal_siswa`) VALUES (NULL, 'yanti', 'mojoagung jombang', 'perempuan', 'islam', 'ma darul faizin '), (NULL, 'alex', 'sumobito jombang', 'laki-laki', 'islam', 'man jombang');
