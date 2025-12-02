@@ -4,6 +4,7 @@
     <title>Document</title>
 </head>
 <body>
+    
     <h2>SI Sekolah | Tambah Data Siswa </h2>
     <br/>
     <a href="index.php">Halaman Utama</a>
@@ -14,19 +15,19 @@
         <table>
             <tr>
                 <td>Nama Siswa</td>
-                <td><input type="text" name="nama"></td>
+                <td><input type="text" name="nama_siswa"></td>
             </tr>
             <tr>
                 <td>Alamat</td>
-                <td><input type="text" name="alamat"></td>
+                <td><input type="text" name="alamat_siswa"></td>
             </tr>
             <tr>
                 <td>Agama</td>
-                <td><input type="text" name="agama"></td>
+                <td><input type="text" name="agama_siswa"></td>
             </tr>
             <tr>
                 <td>Asal Sekolah</td>
-                <td><input type="text" name="asal"></td>
+                <td><input type="text" name="asal_siswa"></td>
             </tr>
             <tr>
                 <td></td>

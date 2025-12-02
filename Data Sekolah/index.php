@@ -30,8 +30,8 @@
             <td><?php echo $data['agama_siswa'];?></td>
             <td><?php echo $data['asal_siswa'];?></td>
             <td>
-                <a href="edit.php?id=<?php echo $data['id']; ?>">Edit</a>
-                <a href="hapus.php?id=<?php echo $data['id']; ?>">Hapus</a>
+                <a href="edit.php?id=<?php echo $data['id_siswa']; ?>">Edit</a>
+                <a href="hapus.php?id=<?php echo $data['id_siswa']; ?>">Hapus</a>
             </td>
         </tr>
         <?php

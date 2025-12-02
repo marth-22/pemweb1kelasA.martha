@@ -3,13 +3,14 @@
 include 'koneksi.php';
 
 // menangkap data yang di kirim dari form
-$nama = $_POST['nama'];
-$alamat = $_POST['alamat'];
-$agama = $_POST ['agama'];
-$asal = $_POST['asal'];
+$id = $_POST['id_siswa'];
+$nama = $_POST['nama_siswa'];
+$alamat = $_POST['alamat_siswa'];
+$agama = $_POST ['agama_siswa'];
+$asal = $_POST['asal_siswa'];
 
 // menginput data ke database
-mysqli_query($konek, "update siswa set nama ='$nama', alamat ='$alamat', agama ='$agama', asal ='$asal')");
+mysqli_query($konek, "update data_siswa set nama ='$nama', alamat ='$alamat', agama ='$agama', asal ='$asal', where id_siswa ='$id'");
 
 // mengalihkan halaman kembali ke index.php
 header("location:index.php");
